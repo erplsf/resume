@@ -23,7 +23,7 @@
 %% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
 % \documentclass[10pt,a4paper,normalphoto]{altacv}
 
-\documentclass[10pt,a4paper,ragged2e]{altacv}
+\documentclass[12pt,a4paper,ragged2e]{altacv}
 
 %% AltaCV uses the fontawesome and academicon fonts
 %% and packages.
@@ -57,8 +57,8 @@
 \definecolor{Resolution}{HTML}{002387}
 \definecolor{SlateGrey}{HTML}{2E2E2E}
 \definecolor{LightGrey}{HTML}{666666}
-\colorlet{heading}{Mulberry}
-\colorlet{accent}{Mulberry}
+\colorlet{heading}{Resolution}
+\colorlet{accent}{Resolution}
 \colorlet{emphasis}{SlateGrey}
 \colorlet{body}{LightGrey}
 
@@ -67,18 +67,25 @@
 \renewcommand{\itemmarker}{{\small\textbullet}}
 \renewcommand{\ratingmarker}{\faCircle}
 
+ \renewcommand{\cvsection}[2][]{%
+    \bigskip%
+    \ifstrequal{#1}{}{}{\marginpar{\vspace*{\dimexpr1pt-\baselineskip}\raggedright\input{#1}}}%
+    {\color{heading}\bfseries\MakeUppercase{#2}}\\[-1ex]%
+    {\color{heading}\rule{\linewidth}{2pt}\par}\medskip
+  }
+
 %% sample.bib contains your publications
 \addbibresource{sample.bib}
 
 \begin{document}
 \name{Andriy Mykhaylyk}
 \tagline{Software/DevOps Engineer}
-\photo{2.8cm}{photo}
+\photo{2.8cm}{photo1}
 \personalinfo{%
   % Not all of these are required!
   % You can add your own with \printinfo{symbol}{detail}
   \email{\href{mailto:erp.lsf@gmail.com}{erp.lsf@gmail.com}}
-  \phone{\href{tel:+4917686960952}{+4917686960952}}
+  \phone{\href{tel:+4917686960952}{+49 176 869 609 52}}
 %  \mailaddress{Address, Street, 00000 County}
   \location{Hamburg, Germany}
 %  \homepage{www.homepage.com/}
@@ -102,32 +109,37 @@
 %% You can always just use \marginpar{...} if you do
 %% not need to align the top of the contents to any
 %% \cvsection title in the "main" bar.
-\cvsection[p1sidebar]{Experience}
 
-\cvevent{Software Engineer}{Brandslisten}{April 2018 -- Ongoing}{Hamburg, Germany}
+\cvsection[p1sidebar]{Profile}
+
+Skilled Software Engineer with heavy experience in DevOps, used to debugging hard infrastructure problems. Proficient in designing new solutions to improve and ease the processes in custom setups.
+
+\cvsection{Experience}
+
+\cvevent{Software Engineer}{Brandslisten GmbH}{April 2018 -- Ongoing}{Hamburg, Germany}
 \begin{itemize}
-\item Support custom OpenStack cloud
-\item Migrate software and services across major versions
-\item Manage the infrastructure with Terraform, Consul, Vault and other tools
-\item Plan and help to implement major features across the product
+\item Support of custom OpenStack cloud across 100+ instances
+\item Migration of software and services through 2 or more major versions
+\item Management of infrastructure with Terraform, Consul, Vault and other Linux tools
+\item Planning and help in implementation of major features for systems
 \end{itemize}
 
 \divider
 
 \cvevent{Ruby Software Engineer}{GlobalLogic}{February 2015 -- April 2018}{Lviv, Ukraine}
 \begin{itemize}
-\item Supported legacy internal system
-\item Migrated application across major versions of Rails
-\item
+\item Support of 3 internal systems used by 20+ people
+\item Migration of applications across 2 major versions of Rails
 \end{itemize}
 
 \divider
 
-\cvevent{RoR/Spree Software Engineer}{GlobalLogic}{February 2015 -- April 2018}{Lviv, Ukraine}
+\cvevent{RoR/Spree Software Engineer}{Freelance}{February 2015 -- April 2018}{Lviv, Ukraine}
 \begin{itemize}
-\item Implemented a full-text search across an online shop
-\item Created an integration between 1C database and Ruby
-\item 
+\item Implementation of a full-text search for an online shop with 1000+ products
+\item Creation of an integration between 1C database and Ruby
+\item \cvachievement{\faUsers}{Communication}{skills that helped my team to better achieve it's goals}
+\
 \end{itemize}
 
 \medskip
