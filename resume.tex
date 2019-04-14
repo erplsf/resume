@@ -34,14 +34,14 @@
 
 \usepackage{xcolor}
 \usepackage{hyperref}
-\hypersetup{
+\hypersetup{%
   colorlinks=true,
-  urlcolor=blue!70!black
+  urlcolor=blue,
 }
 
 % Change the font if you want to, depending on whether
 % you're using pdflatex or xelatex/lualatex
-\ifxetexorluatex
+\ifxetexorluatex%
   % If using xelatex or lualatex:
   %\setmainfont{Lato}
   \setmainfont{Times New Roman}
@@ -74,28 +74,27 @@
     {\color{heading}\rule{\linewidth}{2pt}\par}\medskip
   }
 
-%% sample.bib contains your publications
-\addbibresource{sample.bib}
-
 \begin{document}
 \name{Andriy Mykhaylyk}
-\tagline{Software/DevOps Engineer}
-\photo{2.8cm}{photo1}
+\tagline{\LARGE{Software/DevOps Engineer}}
+\photo{4cm}{photo3}
+
 \personalinfo{%
   % Not all of these are required!
   % You can add your own with \printinfo{symbol}{detail}
+  \github{\href{https://github.com/erplsf}{erplsf}}
   \email{\href{mailto:erp.lsf@gmail.com}{erp.lsf@gmail.com}}
+  \linkedin{\href{https://linkedin.com/in/andriymykhaylyk}{andriymykhaylyk}}
+  \newline
   \phone{\href{tel:+4917686960952}{+49 176 869 609 52}}
 %  \mailaddress{Address, Street, 00000 County}
-  \location{Hamburg, Germany}
 %  \homepage{www.homepage.com/}
-%  \twitter{@twitterhandle}
-  \linkedin{\href{https://linkedin.com/in/andriymykhaylyk}{andriymykhaylyk}}
-  \github{\href{https://github.com/erplsf}{erplsf}}
+  %\printinfo{\faSkype}{orion\_124}
+  \location{Hamburg, Germany}
+}
 
   %% You MUST add the academicons option to \documentclass, then compile with LuaLaTeX or XeLaTeX, if you want to use \orcid or other academicons commands.
   % \orcid{orcid.org/0000-0000-0000-0000}
-}
 
 %% Make the header extend all the way to the right, if you want.
 \begin{fullwidth}
@@ -112,7 +111,7 @@
 
 \cvsection[p1sidebar]{Profile}
 
-Skilled Software Engineer with heavy experience in DevOps, used to debugging hard infrastructure problems. Proficient in designing new solutions to improve and ease the processes in custom setups.
+Skilled Software Engineer with heavy experience in DevOps, used to debugging complex infrastructure problems. Proficient in designing new solutions to improve and ease the processes in custom setups.
 
 \cvsection{Experience}
 
@@ -122,6 +121,7 @@ Skilled Software Engineer with heavy experience in DevOps, used to debugging har
 \item Migration of software and services through 2 or more major versions
 \item Management of infrastructure with Terraform, Consul, Vault and other Linux tools
 \item Planning and help in implementation of major features for systems
+\item Mentoring new team members and helping them to learn our product
 \end{itemize}
 
 \divider
@@ -130,6 +130,8 @@ Skilled Software Engineer with heavy experience in DevOps, used to debugging har
 \begin{itemize}
 \item Support of 3 internal systems used by 20+ people
 \item Migration of applications across 2 major versions of Rails
+\item Adhered in Agile/Kanban workflow
+\item Daily communication with distributed team members and clients
 \end{itemize}
 
 \divider
@@ -137,9 +139,12 @@ Skilled Software Engineer with heavy experience in DevOps, used to debugging har
 \cvevent{RoR/Spree Software Engineer}{Freelance}{February 2015 -- April 2018}{Lviv, Ukraine}
 \begin{itemize}
 \item Implementation of a full-text search for an online shop with 1000+ products
-\item Creation of an integration between 1C database and Ruby
-\item \cvachievement{\faUsers}{Communication}{skills that helped my team to better achieve it's goals}
-\
+\item Creation of integration between 1C database and Ruby
+\item Redesign of the frontend from PHP to Spree
+
+%\cvsubsection{Achievments:}
+%\cvachievement{\faUsers}{Communication}{skills that helped my team to better achieve it's goals}
+%\
 \end{itemize}
 
 \medskip
